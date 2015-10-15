@@ -1,5 +1,6 @@
-﻿console.log('here');
-var app = require('express')();
+﻿var app = require('express')();
+var server = require('http').Server(app);
+var io = require('socket.io')(server);
 
 var targetSocket;
 
@@ -18,11 +19,11 @@ app.get('/api/command', function (req, res) {
 pingConsole();
 
 function pingConsole(){
-    console.log('ping');
+    console.log('5 sec heartbeat');
     setTimeout(pingConsole,5000);
 }
+
 //setup the sockets (for setting target)
-var io = require('socket.io')(app);
 io.on('connection', function (socket) {
     console.log('connection from client ' + socket.id);
     socket.on('setTarget', function () {
