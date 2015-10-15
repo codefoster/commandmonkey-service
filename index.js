@@ -15,6 +15,12 @@ app.get('/api/command', function (req, res) {
     }
 });
 
+pingConsole();
+
+function pingConsole(){
+    console.log('ping');
+    setTimeout(pingConsole,5000);
+}
 //setup the sockets (for setting target)
 var io = require('socket.io')(app);
 io.on('connection', function (socket) {

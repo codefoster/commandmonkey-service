@@ -2,7 +2,7 @@
   "name": "CommandMonkey.service",
   "version": "0.0.0",
   "description": "CommandMonkey.service",
-  "main": "app.js",
+  "main": "index.js",
   "author": {
     "name": "jerfost",
     "email": ""
