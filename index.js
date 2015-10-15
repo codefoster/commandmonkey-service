@@ -1,4 +1,5 @@
-﻿var app = require('express')();
+﻿console.log('here');
+var app = require('express')();
 
 var targetSocket;
 
