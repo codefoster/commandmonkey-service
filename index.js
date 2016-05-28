@@ -5,6 +5,10 @@ var io = require('socket.io')(server);
 var targetSocket;
 
 //setup the http route (for receiving commands)
+app.get('/',function(req,res){
+	req.write('test');
+});
+
 app.get('/api/command', function (req, res) {
     //if there's a target, send the command via a socket message
     if (targetSocket) {
@@ -32,5 +36,5 @@ io.on('connection', function (socket) {
     });
 });
 
-app.listen(process.env.PORT);
+app.listen(process.env.PORT || 3000);
 module.exports = app;
